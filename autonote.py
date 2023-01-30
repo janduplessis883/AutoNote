@@ -130,14 +130,15 @@ class AutoNote:
 
         if setupno == 2:
             title = input("Project Title: ")
-            goal = input("Define the problem, ML approach, the data, and the relevant metrics: ")
-            self.title(title, goal)
+            self.title(title)
             self.import_lib()
         elif setupno == 3:
             self.pre_process()
         elif setupno == 4:
             pass
         elif setupno == 1:
+            title = input("Project Title: ")
+            self.title(title)
             self.theme_only()
         elif setupno == 5:
             pass
@@ -262,8 +263,16 @@ def preprocessing(sentence):
         """.format(text)))
 
     # -HTML Title-----------------------------------------------------------------------------
-    def title(self, info, goal='Define the problem: Identify the type of ML model needed, the data available, and the relevant metrics'):
-        output = f"<div class='alert' style='background-color: #{self.color_5}; color: #{self.color_1}; padding:26px 26px; border-radius:15px; font-size:40px;'><B>{info}</B> <span style='color: #{self.color_1}; font-size:11px;'> ☆ AutoNote</span></div><div style='margin:8px 26px; color:#{self.color_5}; font-size:18px;'>✭ {goal}</div><BR><BR>"
+    def title(self, info):
+        output = f"""<div class='alert' style='background-color: #{self.color_5}; color: #{self.color_1}; padding:26px 26px; border-radius:15px; font-size:40px;'><B>{info}</B> </div><span style='color: #{self.color_5}; padding:26px 26px; font-size:11px;'> Powered by <B>☆ AutoNote</B></span><div style='margin:4px 26px; color:#{self.color_5}; font-size:17px;'>
+<ol>
+<li><B>Problem</B>: Define the business problem you are trying to solve and explain why it is important.</li>
+<li><B>Data</B>: Describe the data sources you will use and the type of data.</li>
+<li><B>ML approach</B>: Explain the machine learning approach you will take and why it is the best approach.</li>
+<li><B>Metrics</B>: Explain which metrics you will use to evaluate the model performance.</li>
+<li><B>Other information</B>: Include any additional information that may be relevant to your project such as assumptions, limitations, and potential risks.</li>
+</ol>
+</div>"""
         display(Javascript("""
             var text = `{}`;
             var cell = Jupyter.notebook.insert_cell_above('markdown');
@@ -312,7 +321,7 @@ def preprocessing(sentence):
 
     # -HTML Info-----------------------------------------------------------------------------
     def html_info1(self, info):
-        output = f"<div style='color:#{self.color_4}; font-size: 18px; margin: 6px 8px;'><B>☞</B>  {info}</div>"
+        output = f"<div style='color:#{self.color_4}; font-size: 17px; margin: 6px 8px;'><B>☞</B>  {info}</div>"
         display(Javascript("""
         var text = `{}`;
         var cell = Jupyter.notebook.insert_cell_above('markdown');
@@ -320,7 +329,7 @@ def preprocessing(sentence):
         """.format(output)))
 
     def html_info2(self, info):
-        output = f"<div style='color:#{self.color_3}; font-size: 18px; margin: 6px 8px;'><B>☞</B> {info}</div>"
+        output = f"<div style='color:#{self.color_3}; font-size: 17px; margin: 6px 8px;'><B>☞</B> {info}</div>"
         display(Javascript("""
         var text = `{}`;
         var cell = Jupyter.notebook.insert_cell_above('markdown');
@@ -328,7 +337,7 @@ def preprocessing(sentence):
         """.format(output)))
 
     def html_info3(self, info):
-        output = f"<div style='color:#{self.color_2}; font-size: 18px; margin: 6px 8px;'><B>☞</B> {info}</div>"
+        output = f"<div style='color:#{self.color_2}; font-size: 17px; margin: 6px 8px;'><B>☞</B> {info}</div>"
         display(Javascript("""
         var text = `{}`;
         var cell = Jupyter.notebook.insert_cell_above('markdown');
@@ -337,7 +346,7 @@ def preprocessing(sentence):
 
     # -Light Line -----------------------------------------------------------------------------
     def h_line(self):
-        output = f"<div class='alert' style='background-color: #{self.color_1}; color:white; padding:1px 4px; border-radius:6px;'></div><BR>"
+        output = f"<div class='alert' style='background-color: #{self.color_3}; color:white; padding:1px 4px; border-radius:6px;'></div><BR>"
         display(Javascript("""
         var text = `{}`;
         var cell = Jupyter.notebook.insert_cell_above('markdown');
@@ -352,9 +361,6 @@ def preprocessing(sentence):
         self.html_info('HTML Info Tab')
         self.h_line()
 
-
-
-
     def split_bp(self, df, column, delimiter, new_column_1, new_column_2):
         # Split the values in the column by the delimiter
         df[new_column_1], df[new_column_2] = df[column].str.split(delimiter, 1).str
@@ -365,18 +371,7 @@ def preprocessing(sentence):
         return df
 
 
-    # --NLP Basic Text Cleaning  LOWER SLICE NUMBERS PUNCTUATION REMOVER --------------
-    def nlp_basic_cleaning(self, sentence):
-        import string
 
-        sentence = ''.join(char for char in sentence if not char.isdigit())
-
-        for punctuation in string.punctuation:
-            sentence = sentence.replace(punctuation, '')
-
-        sentence = sentence.lower()
-        sentence = sentence.strip()
-        return sentence
 
     # --Load Libraries --------------
     def import_lib(self):
@@ -430,7 +425,6 @@ def preprocessing(sentence):
 
     # - Project Frame -----------------------------------------------------------------------------
     def theme_only(self):
-        self.title("Project Title", "Project description: Define the problem, ML approach, the data, and the relevant metrics.")
         self.subhead1('Sub Heading 1', "Sub Heading 1 description.")
         self.html_info1('<b>Information</b> Markdown Cell')
         self.subhead2('Sub Heading 2', "Sub Heading 2 description.")
@@ -444,47 +438,6 @@ def preprocessing(sentence):
     # cleaned_document = data["sentence"].apply(cleaning)
     # cleaned_document.head()
 
-    def cleaning_nlp(sentence):
-
-        import string
-        import nltk
-        from nltk.tokenize import word_tokenize
-        from nltk.corpus import stopwords
-        from nltk.stem import WordNetLemmatizer
-
-        # Basic cleaning
-        sentence = sentence.strip() ## remove whitespaces
-        sentence = sentence.lower() ## lowercase
-        sentence = ''.join(char for char in sentence if not char.isdigit()) ## remove numbers
-
-        # Advanced cleaning
-        for punctuation in string.punctuation:
-            sentence = sentence.replace(punctuation, '') ## remove punctuation
-
-        tokenized_sentence = word_tokenize(sentence) ## tokenize
-        stop_words = set(stopwords.words('english')) ## define stopwords
-
-        tokenized_sentence_cleaned = [ ## remove stopwords
-            w for w in tokenized_sentence if not w in stop_words
-        ]
-
-        lemmatized_v = [
-            WordNetLemmatizer().lemmatize(word, pos = "v")
-            for word in tokenized_sentence_cleaned
-        ]
-
-        lemmatized_n = [
-            WordNetLemmatizer().lemmatize(word, pos = "n")
-            for word in tokenized_sentence_cleaned
-        ]
-
-        cleaned_sentence = ' '.join(word for word in lemmatized_v)
-        cleaned_sentence = ' '.join(word for word in lemmatized_n)
-
-        applying_function = "# Sentences needs to be in a dataframe = data with column heading = sentence\ncleaned_document = data['sentence'].apply(cleaning)\ncleaned_document.head()"
-        create_code_cell(applying_function)
-
-        return cleaned_sentence
 
 
 # import pandas as pd
