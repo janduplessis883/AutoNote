@@ -17,7 +17,7 @@ class AutoNote:
         self.color_5 = ""
         self.set_palette(palette_no)
 
-        palette_preview = f"<table><tr><td style='background-color: #f7f7f7; height: 20px;'>☆ <B>AutoNote</B> ➞ </span></td><td style='background-color: #{self.color_1}; width: 30px; height: 20px;'>1</td><td style='background-color: #{self.color_2}; width: 30px; height: 20px;'>2</td><td style='background-color: #{self.color_3}; width: 30px; height: 20px;'>3</td><td style='background-color: #{self.color_4}; width: 30px; height: 20px;'>4</td><td style='background-color: #{self.color_5}; width: 30px; height: 20px;'>5</td><td style='background-color: #f7f7f7; height: 20px; font-size: 12px;'>setup( )</td></tr></table>"
+        palette_preview = f"<table><tr><td style='background-color: #f7f7f7; height: 20px;'>☆ <B>AutoNote</B> Theme ➝ </span></td><td style='background-color: #{self.color_1}; width: 30px; height: 20px;'>1</td><td style='background-color: #{self.color_2}; width: 30px; height: 20px;'>2</td><td style='background-color: #{self.color_3}; width: 30px; height: 20px;'>3</td><td style='background-color: #{self.color_4}; width: 30px; height: 20px;'>4</td><td style='background-color: #{self.color_5}; width: 30px; height: 20px;'>5</td></tr></table>"
         display(HTML(palette_preview))
 
         self.create_code_cell('# AutoNote Setup - Delete this cell once setup is complete\nan.setup()')
@@ -28,21 +28,19 @@ class AutoNote:
 
 
     def set_palette(self, palette_no):
-        if palette_no == 1:
+        if palette_no == 2:
             palette = ['e0e1dd','778da9','415a77','1b263b','0d1b2a']
-        elif palette_no == 2:
-            palette = ['f8c764','e08a61','da7b60','cf5f5f','c9505e']
-        elif palette_no == 3:
-            palette = ['52A9BE','547AA5','526685','4F5165','38393B']
-        elif palette_no == 4:
-            palette = ['eff6e0','aec3b0','598392','124559','01161e']
-        elif palette_no == 5:
-            palette = ['ced4da','6c757d','495057','343a40','212529']
         elif palette_no == 6:
-            palette = ['C9CDC6','4C8B96','457E88','3F737C','396971']
+            palette = ['f8c764','e08a61','da7b60','cf5f5f','c9505e']
+        elif palette_no == 5:
+            palette = ['52A9BE','547AA5','526685','4F5165','38393B']
+        elif palette_no == 3:
+            palette = ['eff6e0','aec3b0','598392','124559','01161e']
+        elif palette_no == 1:
+            palette = ['ced4da','6c757d','495057','343a40','212529']
         elif palette_no == 7:
             palette = ['FBB13C','C5A64D','8E9A5E','218380','58586B']
-        elif palette_no == 8:
+        elif palette_no == 4:
             palette = ['F5E3E0','E8B4BC','D282A6','A0647E','6E4555']
 
         self.color_1 = palette[0]
@@ -55,15 +53,76 @@ class AutoNote:
     def setup(self):  # -------------------------------------------------
         options = """<table>
                     <tr>
-                        <td style='background-color: #f7f7f7; text-align:left; vertical-align:top;'>☆ <B>AutoNote</B> Setup ➞ </td>
-                        <td style='background-color: #f7f7f7; text-align:left;'>
-                        1. <B>Themed Markdown only</B> ➞ Load themed markdown cells, duplicate and use your own notebook.<br>
-                        2. <B>Theme + Initial Data Exploration</B> ➞ Load themed markdown cells, with initial data exploration code cells.<br>
-                        3. <B>Themed Dataset Preparation</B> ➞ Themed Pre-processing code cells for ML dataset preparation.<br>
-                        4. <B>Dataset Preparation Code</B> ➞ Pre-processing code cells for ML dataset preparation.<br>
-                        <a href="#" style="color: #343a40; text-decoration: none;" onmouseover="this.style.color='#495057';" onmouseout="this.style.color='#6c757d';" onvisited="this.style.color='#6c757d';">Documentation</a>
+                        <td style='background-color: #f7f7f7; text-align:left; vertical-align:top;'>☆ <B>AutoNote</B> Setup ➝ </td>
+                        <td style='background-color: #f7f7f7; text-align:left; vertical-align: top;'>
+                        1. <B>Theme</B> ➝ Markdown<br>
+                        2. <B>Theme</B> ➝ Initial data exploration<br>
+                        3. Code Block ➝ Initial data exploration<br>
+                        4. <B>Theme</B> ➝ Dataset Preparation<br>
+                        5. Code Block ➝ Dataset Preparation<br>
+                        6. <B>---</B><br>
+                        7. <B>---</B><br>
+                        8. <B>---</B><br>
+                        9. <B>---</B><br>
+                        10. Code ➝ ---<br>
+                        11. Code ➝ ---<br>
+                        12. Code ➝ ---<br>
+                        13. Code ➝ ---<br>
+                        14. Code ➝ ---<br>
+                        15. Code ➝ ---<br>
+                        16. Code ➝ ---<br>
+                        17. Code ➝ ---<br>
+                        18. Code ➝ ---<br>
+                        19. Code ➝ ---<br>
+                        20. Code ➝ ---<br>
+
+                        </td>
+                        <td style='background-color: #f7f7f7; text-align:left; vertical-align: top;'>
+                        21. Code ➝ NLP: Preprocessing function<br>
+                        22. Code: ---<br>
+                        23. Code: ---<br>
+                        24. Code: ---<br>
+                        25. Code: ---<br>
+                        26. Code: ---<br>
+                        27. Code: ---<br>
+                        28. Code: ---<br>
+                        29. Code: ---<br>
+                        30. Code: ---<br>
+                        31. Code: ---<br>
+                        32. Code: ---<br>
+                        33. Code: ---<br>
+                        34. Code: ---<br>
+                        35. Code: ---<br>
+                        36. Code: ---<br>
+                        37. Code: ---<br>
+                        38. Code: ---<br>
+                        39. Code: ---<br>
+                        40. Code: ---<br>
+                        </td>
+                        <td style='background-color: #f7f7f7; text-align:left; vertical-align: top;'>
+                        41. Code ➝ ---<br>
+                        42. Code ➝ ---<br>
+                        43. Code ➝ ---<br>
+                        44. Code ➝ ---<br>
+                        45. Code ➝ ---<br>
+                        46. Code ➝ ---<br>
+                        47. Code ➝ ---<br>
+                        48. Code ➝ ---<br>
+                        49. Code ➝ ---<br>
+                        50. Code ➝ ---<br>
+                        51. Code ➝ ---<br>
+                        52. Code ➝ ---<br>
+                        53. Code ➝ ---<br>
+                        54. Code ➝ ---<br>
+                        55. Code ➝ ---<br>
+                        56. Code ➝ ---<br>
+                        57. Code ➝ ---<br>
+                        58. Code ➝ ---<br>
+                        59. Code ➝ ---<br>
+                        60. Code ➝ ---<br>
                         </td>
                     </tr>
+
                     </table>
                     """
         display(HTML(options))
@@ -74,15 +133,113 @@ class AutoNote:
             goal = input("Define the problem, ML approach, the data, and the relevant metrics: ")
             self.title(title, goal)
             self.import_lib()
-
         elif setupno == 3:
             self.pre_process()
-
         elif setupno == 4:
             pass
-
         elif setupno == 1:
             self.theme_only()
+        elif setupno == 5:
+            pass
+        elif setupno == 6:
+            pass
+        elif setupno == 7:
+            pass
+        elif setupno == 8:
+            pass
+        elif setupno == 9:
+            pass
+        elif setupno == 10:
+            pass
+        elif setupno == 11:
+            pass
+        elif setupno == 12:
+            pass
+        elif setupno == 13:
+            pass
+        elif setupno == 14:
+            pass
+        elif setupno == 15:
+            pass
+        elif setupno == 16:
+            pass
+        elif setupno == 17:
+            pass
+        elif setupno == 18:
+            pass
+        elif setupno == 19:
+            pass
+        elif setupno == 20:
+            pass
+        elif setupno == 21:
+            self.create_code_cell("""import string
+from nltk import word_tokenize
+from nltk.stem import WordNetLemmatizer
+
+def preprocessing(sentence):
+    # Basic cleaning
+    sentence = sentence.strip() ## remove whitespaces
+    sentence = sentence.lower() ## lowercase
+    sentence = ''.join(char for char in sentence if not char.isdigit()) ## remove numbers
+
+    # Advanced cleaning - Remove Punctuation
+    for punctuation in string.punctuation:
+        sentence = sentence.replace(punctuation, '')
+
+
+    tokenized_sentence = word_tokenize(sentence) ## tokenize
+    stop_words = set(stopwords.words('english')) ## define stopwords
+
+    tokenized_sentence_cleaned = [w for w in tokenized_sentence if not w in stop_words] # remove stop words
+
+    lemmatized = [WordNetLemmatizer().lemmatize(word) for word in tokenized_sentence_cleaned]
+    cleaned_sentence = ' '.join(word for word in lemmatized)
+
+    return cleaned_sentence""")
+            self.create_code_cell("# Apply Preprocessing function to dataframe column\ndata['cleaned_reviews'] = data['reviews'].apply(preprocessing)\ndata.head()")
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+        elif setupno == 22:
+            pass
+
 
     def highlight_cells(val):
         color1 = '#{self.color_1}' if val > 0.6 else color1
@@ -106,7 +263,7 @@ class AutoNote:
 
     # -HTML Title-----------------------------------------------------------------------------
     def title(self, info, goal='Define the problem: Identify the type of ML model needed, the data available, and the relevant metrics'):
-        output = f"<div class='alert' style='background-color: #{self.color_5}; color: #{self.color_1}; padding:26px 26px; border-radius:15px; font-size:40px;'><B>{info}</B></div><div style='margin:8px 26px; color:#{self.color_5}; font-size:18px;'>✭ {goal}</div><BR><BR>"
+        output = f"<div class='alert' style='background-color: #{self.color_5}; color: #{self.color_1}; padding:26px 26px; border-radius:15px; font-size:40px;'><B>{info}</B> <span style='color: #{self.color_1}; font-size:11px;'> ☆ AutoNote</span></div><div style='margin:8px 26px; color:#{self.color_5}; font-size:18px;'>✭ {goal}</div><BR><BR>"
         display(Javascript("""
             var text = `{}`;
             var cell = Jupyter.notebook.insert_cell_above('markdown');
@@ -154,8 +311,24 @@ class AutoNote:
 
 
     # -HTML Info-----------------------------------------------------------------------------
-    def html_info(self, info):
-        output = f"<div style='color:#{self.color_4}; font-size: 18px; margin: 6px 8px;'><B>☞  {info}</div>"
+    def html_info1(self, info):
+        output = f"<div style='color:#{self.color_4}; font-size: 18px; margin: 6px 8px;'><B>☞</B>  {info}</div>"
+        display(Javascript("""
+        var text = `{}`;
+        var cell = Jupyter.notebook.insert_cell_above('markdown');
+        cell.set_text(text);
+        """.format(output)))
+
+    def html_info2(self, info):
+        output = f"<div style='color:#{self.color_3}; font-size: 18px; margin: 6px 8px;'><B>☞</B> {info}</div>"
+        display(Javascript("""
+        var text = `{}`;
+        var cell = Jupyter.notebook.insert_cell_above('markdown');
+        cell.set_text(text);
+        """.format(output)))
+
+    def html_info3(self, info):
+        output = f"<div style='color:#{self.color_2}; font-size: 18px; margin: 6px 8px;'><B>☞</B> {info}</div>"
         display(Javascript("""
         var text = `{}`;
         var cell = Jupyter.notebook.insert_cell_above('markdown');
@@ -216,25 +389,26 @@ class AutoNote:
         self.create_code_cell("data.describe().T.round(3)")
         self.subhead1('Correlation + Exploratory Plots', 'Further exploration of data correlation.')
         self.create_code_cell("data.corr().round(3)")
-        self.html_info('Plotting: <code>sns.pairplot</code>')
+        self.html_info1('Plotting: sns.pairplot')
         self.create_code_cell("# sns.pairplot to explore numberic data correlation & outliers.\nsns.pairplot(data)")
-        self.html_info('Plotting: </B>Correlation & Heatmap')
+        self.html_info1('Plotting: Correlation & Heatmap')
         self.create_code_cell("data.corr().round(3)")
         self.create_code_cell("# sns.heatmap cmap options flare (red/purple), crest (blue), other, other\nsns.heatmap(data.corr(), annot=True, annot_kws={'size': 9}, fmt='.2f', cmap='flare')")
         self.h_line()
 
     def pre_process(self):
-        self.html_info("Data Preparation</B> - Duplicates, Missing Data, Outliers, Feature Scalling, Dataset balancing, Encoding")
+        self.subhead1("Data Preparation</B>", "Duplicates, Missing Data, Outliers, Feature Scalling, Dataset balancing, Encoding")
         self.subhead2('Duplicates', 'Remove duplicate data entries.')
+        self.create_code_cell("len(data) # Dataframe Length before removal of duplicated")
         self.create_code_cell("data.duplicated().sum() # Compute the number of duplicated rows")
         self.create_code_cell("data = data.drop_duplicates() # Remove duplicates\nlen(data) # Check new number of rows")
         self.subhead2('Missing Values', 'Dealing with missing values in your dataset, made easy!')
         self.create_code_cell("# Counting the number of NaN for each column\ndata.isnull().sum().sort_values(ascending=False)")
-        self.html_info("sklearn.preprocessing.StandardScaler")
+        self.html_info2("sklearn.preprocessing.<b>StandardScaler</b>")
         self.create_code_cell("")
-        self.html_info("sklearn.preprocessing.MinMaxScaler")
+        self.html_info2("sklearn.preprocessing.<b>MinMaxScaler</b>")
         self.create_code_cell("")
-        self.html_info("sklearn.preprocessing.RobustScaler")
+        self.html_info2("sklearn.preprocessing.<b>RobustScaler</b>")
         self.create_code_cell("")
         self.subhead2('Outliers', 'Identify and managing Outliers.')
         self.create_code_cell("")
@@ -243,11 +417,11 @@ class AutoNote:
         self.subhead2('Dataset Balancing', 'Oversampling of minority class, Undersampling of majority class.')
         self.create_code_cell("")
         self.subhead2('Encoding', 'Transforming non-numerical data into an equivalent numerical form.')
-        self.html_info("sklearn.preprocessing.OrdinalEncoder")
+        self.html_info2("sklearn.preprocessing.<b>OrdinalEncoder</b>")
         self.create_code_cell("")
-        self.html_info("sklearn.preprocessing.OneHotEncoder")
+        self.html_info2("sklearn.preprocessing.<b>OneHotEncoder</b>")
         self.create_code_cell("")
-        self.html_info("sklearn.preprocessing.LabelEncoder")
+        self.html_info2("sklearn.preprocessing.<b>LabelEncoder</b>")
         self.create_code_cell("")
         self.h_line()
 
@@ -258,9 +432,11 @@ class AutoNote:
     def theme_only(self):
         self.title("Project Title", "Project description: Define the problem, ML approach, the data, and the relevant metrics.")
         self.subhead1('Sub Heading 1', "Sub Heading 1 description.")
+        self.html_info1('<b>Information</b> Markdown Cell')
         self.subhead2('Sub Heading 2', "Sub Heading 2 description.")
+        self.html_info2('<b>Information</b> Markdown Cell')
         self.subhead3('Sub Heading 3', "Sub Heading 3 description.")
-        self.html_info('Information markdown cell')
+        self.html_info3('<b>Information</b> Markdown Cell')
         self.h_line()
 
     # - NLP - Basic and Advance Sentence Cleaning  -------------------------------------------------
@@ -268,7 +444,7 @@ class AutoNote:
     # cleaned_document = data["sentence"].apply(cleaning)
     # cleaned_document.head()
 
-    def cleaning(sentence):
+    def cleaning_nlp(sentence):
 
         import string
         import nltk
