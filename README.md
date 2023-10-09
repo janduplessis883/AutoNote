@@ -1,8 +1,8 @@
-# AutoNote
+![AutoNote](https://github.com/janduplessis883/AutoNote/blob/master/AutoNoteSlash.png?raw=true)
 
 ## Overview
 
-The AutoNote Python class aims to enhance your Jupyter Notebook experience by adding automation, utility, and interactivity. The class is designed to assist with routine tasks, such as connecting to a MySQL database, handling emails via EmailBuddy, and logging activities. It also provides a unique way of managing code snippets, allowing you to save, load, and organize pieces of code directly within your notebook.
+The AutoNote Python class aims to enhance your Jupyter Notebook experience by adding automation, utility, and interactivity. The class is designed to assist with routine tasks, such as connecting to a MySQL database, It also provides a unique way of managing code snippets, allowing you to save, load, and organize pieces of code directly within your notebook.
 
 ## Features
 
@@ -10,9 +10,7 @@ The AutoNote Python class aims to enhance your Jupyter Notebook experience by ad
 Quick MySQL Connectivity: AutoNote comes with a built-in method to connect to your MySQL database.
 Interactive Connection Management: GUI buttons allow you to connect or disconnect from the database effortlessly.
 Error Handling: If the connection fails, an error message is displayed.
-Email Handling with EmailBuddy
-Automated Email Parsing: AutoNote incorporates EmailBuddy to automate the process of fetching, deleting, and organizing emails.
-One-Click Operation: A single button to run all EmailBuddy tasks.
+
 ### Code Snippets Management
 Snippet Saving: Save important code snippets along with a group name and an optional markdown flag.
 Code Loading: Load saved snippets into new code cells or markdown cells with a single click.
@@ -28,12 +26,12 @@ Markdown Support: The class allows you to insert markdown snippets along with co
 bash
 Copy code
 git clone https://github.com/janduplessis883/AutoNote.git
-# Dependencies
+# Dependencies
 
-mysql-connector
-Google Sheet API
-EmailBuddy library
-Usage
+mysql-connector<BR>
+Google Sheet API<
+EmailBuddy library<
+# Usage
 
 python
 Copy code
